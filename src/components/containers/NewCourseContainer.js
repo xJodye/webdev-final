@@ -27,7 +27,7 @@ class NewCourseContainer extends Component {
 
     handleSubmit = async event => {
         event.preventDefault();
-
+        //dont need ID because the course has not been created yet
         let course = {
             title: this.state.title,
             timeslot: this.state.timeslot,
@@ -38,10 +38,6 @@ class NewCourseContainer extends Component {
         let newCourse = await this.props.addCourse(course);
 
         this.setState({
-          title: this.state.title,
-          timeslot: this.state.timeslot,
-          location: this.state.location,
-          instructorId: null, 
           redirect: true, 
           redirectId: newCourse.id
         });
@@ -58,7 +54,7 @@ class NewCourseContainer extends Component {
         }
         return (
           <NewCourseView 
-            handleChange = {this.handleChange} 
+            handleChange={this.handleChange} 
             handleSubmit={this.handleSubmit}      
           />
         );

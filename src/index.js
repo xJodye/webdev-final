@@ -10,9 +10,8 @@ import store from "./store";
 
 //Router
 import { BrowserRouter } from "react-router-dom";
-
-
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
     <Provider store={store}>
       <BrowserRouter>
         <App />
