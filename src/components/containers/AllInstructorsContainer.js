@@ -1,22 +1,18 @@
-import { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { useEffect } from "react";
 import { fetchAllInstructorsThunk } from "../../store/thunks";
 import { AllInstructorsView } from "../views";
 
-class AllInstructorsContainer extends Component {
-  componentDidMount() {
-    console.log(this.props);
-    this.props.fetchAllInstructors();
-  }
+function AllInstructorsContainer({ allInstructors, fetchAllInstructors }) {
+useEffect(() => {
+   fetchAllInstructors();
 
-  render() {
-    return (
-      <AllInstructorsView
-        allInstructors={this.props.allInstructors}
-      />
-    );
-  }
+   // IMPORTANT: DO NOT REMOVE THE COMMENT BELOW
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []) 
+
+  return <AllInstructorsView allInstructors={allInstructors} />;
 }
 
 // Map state to props;
