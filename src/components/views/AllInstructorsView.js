@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { deleteInstructorThunk } from "../../store/thunks";
 
 const AllInstructorsView = (props) => {
   if (!props.allInstructors.length) {
@@ -16,11 +17,17 @@ const AllInstructorsView = (props) => {
             <h1>{name}</h1>
           </Link>
           <p>{instructor.department}</p>
-          <button onClick>Delete</button> <br/>
+          <Link to={`/editemployee/${instructor.id}`}> <button>edit</button></Link> <br/> <button onClick={() => deleteInstructorThunk(instructor.id)}>Delete</button> <br/>
         </div>
         );
 
       })}
+      <br/>
+      <br/>
+      <Link to='/newemployee'><button>Add New Employee</button></Link>
+      <br/>
+      <br/>
+      <Link to={`/`}><button>Home Page</button></Link>
     </div>
   );
 };

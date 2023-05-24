@@ -36,7 +36,7 @@ const InstructorView = (props) => {
         })}</div>
 
       </div>
-
+      <Link to={`/`}><button>Home Page</button></Link>
   
     </div>
   );
