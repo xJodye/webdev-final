@@ -24,7 +24,8 @@ const App = () => {
         <Route exact path="/" component={HomePageContainer} />
         <Route exact path="/employees" component={AllInstructorsContainer} />
         <Route exact path="/employees/:id" component={InstructorContainer} />
-        <Route exact path="/taks" component={AllCoursesContainer} />
+        <Route exact path="/tasks" component={AllCoursesContainer} />
+        <route exact path="/newemployeee" component={NewCourseContainer} />
         <Route exact path="/newtask" component={NewCourseContainer} />
         <Route exact path="/task/:id" component={CourseContainer} />
         <Route exact path="/edittask/:id" component={EditCourseContainer} />

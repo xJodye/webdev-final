@@ -1,44 +1,74 @@
+import React from 'react';
 
-
-
-const NewCourseView = (props) => {
-  const {handleChange, handleSubmit, error } = props;
-
+const NewTaskView = ({ handleChange, handleSubmit, error }) => {
   return (
     <div className="root">
+
       <div className="formContainer">
         <div className="formTitle">
-          <h2 style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-            New Course
+          <h2
+            style={{
+              fontWeight: "bold",
+              fontFamily: "Courier, sans-serif",
+              fontSize: "20px",
+              color: "blue",
+            }}>
+            New Task
           </h2>
         </div>
-        <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
-          <label style= {{color:'#11153e', fontWeight: 'bold'}}>Title: </label>
-          <input type="text" name="title" onChange ={(e) => handleChange(e)} />
-          <br/>
-          <br/>
+        <form style={{ textAlign: "center" }} onSubmit={handleSubmit}>
+          <label style={{ color: "blue", fontWeight: "bold" }}>
+            Description:{" "}
+          </label>
+          <input
+            type="text"
+            name="description"
+            onChange={handleChange}
+          />
+          <br />
+          <br />
 
-          <label style={{color:'#11153e', fontWeight: 'bold'}}>Timeslot: </label>
-          <input type="text" name="timeslot" onChange={(e) => handleChange(e)} />
-          <br/>
-          <br/>
+          <label style={{ color: "blue", fontWeight: "bold" }}>
+            Priority Level:{" "}
+          </label>
+          <input
+            type="text"
+            name="prioritylevel"
+            onChange={handleChange}
+          />
+          <br />
+          <br />
 
-          <label style={{color:'#11153e', fontWeight: 'bold'}}>instructorId: </label>
-          <input type="text" name="instructorId" onChange={(e) => handleChange(e)} />
-          <br/>
-          <br/>
+          <label style={{ color: "blue", fontWeight: "bold" }}>
+            Completion Status:{" "}
+          </label>
+          <input
+            type="text"
+            name="completionstatus"
+            onChange={handleChange}
+          />
+          <br />
+          <br />
 
-          <button type="submit">
-            Submit
-          </button>
-          <br/>
-          <br/>
+          <label style={{ color: "blue", fontWeight: "bold" }}>
+            EmployeeId:{" "}
+          </label>
+          <input
+            type="text"
+            name="employeeId"
+            onChange={handleChange}
+          />
+          <br />
+          <br />
+
+          <button type="submit">Submit</button>
+          <br />
+          <br />
         </form>
-        {error!=="" && <p>{error}</p>}
-        </div>
+        {error && <p>{error}</p>}
       </div>
-    
-  )
-}
+    </div>
+  );
+};
 
-export default NewCourseView;
+export default NewTaskView;

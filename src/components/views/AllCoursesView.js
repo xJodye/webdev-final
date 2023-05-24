@@ -6,9 +6,9 @@ const AllCoursesView = (props) => {
   if (!courses.length) {
     return (
     <div>
-      <p>There are no courses.</p>
-      <Link to={`/newcourse`}>
-        <button>Add New Course</button>
+      <p>There are no tasks.</p>
+      <Link to={`/newtask`}>
+        <button>Add New task</button>
       </Link>
     </div>
     );
@@ -20,7 +20,7 @@ const AllCoursesView = (props) => {
         let title = course.title;
         return (
           <div key={course.id}>
-          <Link to={`/course/${course.id}`}>
+          <Link to={`/tasks/${course.id}`}>
             <h1>{title}</h1>
           </Link>
           <button onClick={() => deleteCourse(course.id)}>Delete</button>
@@ -28,8 +28,8 @@ const AllCoursesView = (props) => {
         );
       }
       )}
-      <Link to={`/newcourse`}>
-        <button>Add New Course</button>
+      <Link to={`/newtask`}>
+        <button>Add New task</button>
       </Link>
     </div>
   );

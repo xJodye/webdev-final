@@ -125,11 +125,11 @@ class EditCourseContainer extends Component {
         return (
         <div>
         <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
-            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Title: </label>
+            <label style= {{color:'#white', fontWeight: 'bold'}}>Title: </label>
             <input type="text" name="title" value={this.state.title || ''} placeholder={course.title} onChange ={(e) => this.handleChange(e)}/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Timeslot: </label>
+            <label style={{color:'#white', fontWeight: 'bold'}}>Timeslot: </label>
             <input type="text" name="timeslot" value={this.state.timeslot || ''} placeholder={course.timeslot} onChange={(e) => this.handleChange(e)}/>
             <br/>
 
@@ -155,7 +155,7 @@ class EditCourseContainer extends Component {
 
           {course.instructorId !== null ?
             <div> Current instructor:  
-            <Link to={`/instructor/${course.instructorId}`}>{course.instructor.firstname}</Link>
+            <Link to={`/tasks/${course.instructorId}`}>{course.instructor.firstname}</Link>
             <button onClick={async () => {await editCourse({id:course.id, instructorId: null});  fetchCourse(course.id)}}>Unassign</button>
             </div>
             : <div> No instructor currently assigned </div>

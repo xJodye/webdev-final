@@ -29,10 +29,18 @@ class NewCourseContainer extends Component {
     handleSubmit = async event => {
         event.preventDefault();
         //dont need ID because the course has not been created yet
-        if(this.state.title===""){
-          this.setState({error:"Title field is required"});
+        if(this.state.description===""){
+          this.setState({error:"description is required"});
           return;
         }
+        if(this.state.prioritylevel===""){
+          this.setState({error:"Must provide a priority status."});
+          return;
+        }
+        if(this.state.completionstatus===""){
+          this.setState({error:"Must enter a completion status."});
+          return;
+        };
         let course = {
             title: this.state.title,
             timeslot: this.state.timeslot,
@@ -56,7 +64,7 @@ class NewCourseContainer extends Component {
     render() {
       //go to single course view of newly created course
         if(this.state.redirect) {
-          return (<Redirect to={`/course/${this.state.redirectId}`}/>)
+          return (<Redirect to={`/task/${this.state.redirectId}`}/>)
         }
         return (
           <NewCourseView 
