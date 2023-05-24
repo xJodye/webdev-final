@@ -22,12 +22,12 @@ const App = () => {
     <div className="App">
       <Switch>
         <Route exact path="/" component={HomePageContainer} />
-        <Route exact path="/instructors" component={AllInstructorsContainer} />
-        <Route exact path="/instructor/:id" component={InstructorContainer} />
-        <Route exact path="/courses" component={AllCoursesContainer} />
-        <Route exact path="/newcourse" component={NewCourseContainer} />
-        <Route exact path="/course/:id" component={CourseContainer} />
-        <Route exact path="/editcourse/:id" component={EditCourseContainer} />
+        <Route exact path="/employees" component={AllInstructorsContainer} />
+        <Route exact path="/employees/:id" component={InstructorContainer} />
+        <Route exact path="/taks" component={AllCoursesContainer} />
+        <Route exact path="/newtask" component={NewCourseContainer} />
+        <Route exact path="/task/:id" component={CourseContainer} />
+        <Route exact path="/edittask/:id" component={EditCourseContainer} />
 
       </Switch>        
     </div>
