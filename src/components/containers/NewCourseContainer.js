@@ -29,22 +29,21 @@ class NewCourseContainer extends Component {
     handleSubmit = async event => {
         event.preventDefault();
         //dont need ID because the course has not been created yet
-        if(this.state.description===""){
+        if(!this.state.description || this.state.description.trim()===""){
           this.setState({error:"description is required"});
           return;
         }
-        if(this.state.prioritylevel===""){
+        if( !this.state.prioritylevel ||  this.state.prioritylevel.trim()===""){
           this.setState({error:"Must provide a priority status."});
           return;
         }
-        if(this.state.completionstatus===""){
+        if(!this.state.completionstatus || this.state.completionstatus.trim()===""){
           this.setState({error:"Must enter a completion status."});
           return;
         };
         let course = {
-            title: this.state.title,
+            title: this.state.description,
             timeslot: this.state.timeslot,
-            location: this.state.location,
             instructorId: this.state.instructorId
         };
         

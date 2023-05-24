@@ -119,7 +119,7 @@ class EditCourseContainer extends Component {
       
         //go to single course view of the edited course
         if(this.state.redirect) {
-          return (<Redirect to={`/course/${this.state.redirectId}`}/>)
+          return (<Redirect to={`/task/${this.state.redirectId}`}/>)
         }
 
         return (
@@ -165,7 +165,7 @@ class EditCourseContainer extends Component {
           {otherInstructors.map(instructor => {
             return (
             <div key={instructor.id}>
-                <Link to={`/instructor/${instructor.id}`}>
+                <Link to={`/employees/${instructor.id}`}>
                   <h4>{instructor.firstname}</h4>
                 </Link>
                 <button onClick={async() => {await editCourse({id:course.id, instructorId: instructor.id}); fetchCourse(course.id)}}>Assign this instructor</button>
