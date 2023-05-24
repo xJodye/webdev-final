@@ -58,3 +58,25 @@ export const fetchCourse = (course) => {
     payload: course,
   };
 };
+
+export const addInstructor = (employee) => {
+  return {
+    type: at.ADD_INSTRUCTOR,
+    payload: employee,
+  };
+};
+
+export const editInstructor = (employee) => {
+  return {
+    type: at.EDIT_INSTRUCTOR,
+    payload: employee,
+  };
+};
+
+
+export const deleteInstructor = (employeeId) => {
+  return {
+    type: at.DELETE_INSTRUCTOR,
+    payload: employeeId,
+  };
+};
