@@ -8,7 +8,7 @@ const AllCoursesView = (props) => {
     <div>
       <p>There are no tasks.</p>
       <Link to={`/newtask`}>
-        <button>Add New task</button>
+        <button>Add New Task</button>
       </Link>
     </div>
     );
@@ -20,7 +20,7 @@ const AllCoursesView = (props) => {
         let title = course.title;
         return (
           <div key={course.id}>
-          <Link to={`/tasks/${course.id}`}>
+          <Link to={`/task/${course.id}`}>
             <h1>{title}</h1>
           </Link>
           <button onClick={() => deleteCourse(course.id)}>Delete</button>

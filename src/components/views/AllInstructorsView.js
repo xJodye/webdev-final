@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AllInstructorsView = (props) => {
   if (!props.allInstructors.length) {
-    return <div>There are no instructors.</div>;
+    return <div>There are no employees.</div>;
   }
 
   return (
@@ -12,10 +12,11 @@ const AllInstructorsView = (props) => {
         let name = instructor.firstname + " " + instructor.lastname;
         return (
           <div key={instructor.id}>
-          <Link to={`/instructor/${instructor.id}`}>
+          <Link to={`/employees/${instructor.id}`}>
             <h1>{name}</h1>
           </Link>
           <p>{instructor.department}</p>
+          <button onClick>Delete</button> <br/>
         </div>
         );
 

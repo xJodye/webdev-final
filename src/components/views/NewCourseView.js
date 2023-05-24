@@ -55,7 +55,7 @@ const NewTaskView = ({ handleChange, handleSubmit, error }) => {
           </label>
           <input
             type="text"
-            name="employeeId"
+            name=""
             onChange={handleChange}
           />
           <br />
